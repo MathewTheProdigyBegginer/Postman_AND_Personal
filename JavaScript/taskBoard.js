@@ -1,5 +1,5 @@
-import { API_BASE_URL } from "../../config/apiConfig.js";
-import { getFromLocalStorage } from "../utils/storage.js";
+import { API_BASE_URL } from "./apiConfig.js";
+import { getFromLocalStorage } from "./storage.js";
 
 const boardsList = document.getElementById("boardsList");
 const userNameSpan = document.getElementById("userName");
@@ -120,7 +120,7 @@ function loadUserName() {
 
 logoutButton.addEventListener("click", () => {
     localStorage.removeItem("user");
-    window.location.href = "index.html";
+    window.location.href = "../HTML/index.html";
 });
 
 
