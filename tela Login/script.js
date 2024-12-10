@@ -1,20 +1,20 @@
-import { API_BASE_URL } from "./apiConfig.js";
-import { saveToLocalStorage } from "./storage.js";
+import { API_BASE_URL } from "../config/apiConfig.js";
+import { saveToLocalStorage } from "../config/storage.js";
 
-const loginForm = document.getElementById("login-form");
+const acessar = document.getElementById("acessar");
 const emailInput = document.getElementById("email");
-const errorMessage = document.getElementById("error-message");
+const mensagemerro = document.getElementById("mensagem-erro");
 
-loginForm.addEventListener("submit", async (event) => {
+acessar.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   const email = emailInput.value.trim();
   if (!email) {
-    showError("Por favor informe um email válido.");
+    showError("Informe um e-mail válido.");
     return;
   }
 
-  const submitButton = loginForm.querySelector("button");
+  const submitButton = acessar.querySelector("button");
   disableButton(submitButton, true);
 
   try {
@@ -30,22 +30,21 @@ loginForm.addEventListener("submit", async (event) => {
     }
 
     const userData = await response.json();
-    saveToLocalStorage("user", { id: userData.Id, email: userData.Email, name: userData.Name});
-    window.location.href = "../HTML/taskBoard.html";
+    saveToLocalStorage("user", { id: userData.Id, email: userData.Email });
+    window.location.href = "InitialDevs.html";
   } catch (error) {
-    showError("Falha ao se conectar com o servidor. Tente novamente mais tarde");
+    showError("Falha ao se conectar com o servidor.");
   } finally {
     disableButton(submitButton, false);
   }
 });
 
 function disableButton(button, disable) {
-
   button.disabled = disable;
   button.textContent = disable ? "Carregando..." : "Acessar";
 }
 
 function showError(message) {
-  errorMessage.textContent = message;
-  errorMessage.classList.remove("hidden");
+  mensagemerro.textContent = message;
+  mensagemerro.classList.remove("hidden");
 }

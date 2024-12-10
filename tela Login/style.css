@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f4f4f4; /* Cor de fundo neutra */
+    color: #333; /* Cor de texto escura para contraste */
+}
+
+div {
+    background-color: #ffffff;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+h1.titulo {
+    font-size: 28px;
+    text-align: center;
+    color: #ff4d4d; /* Barra superior vermelha */
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 14px;
+    text-align: left;
+}
+
+input[type="email"] {
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    outline: none;
+}
+
+input[type="email"]:focus {
+    border-color: #ff4d4d; /* Cor de foco vermelha */
+}
+
+button {
+    background-color: #ff4d4d; /* Cor de fundo vermelha */
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #e43f3f; /* Cor de hover vermelha mais escura */
+}
+
+button:active {
+    background-color: #b33434; /* Cor de clique vermelha ainda mais escura */
+}
+
+#mensagem-erro {
+    padding: 10px;
+    color: #ff0000;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.hidden {
+    display: none;
+}

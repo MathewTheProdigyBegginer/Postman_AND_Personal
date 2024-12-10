@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrontBoard</title>
+
+    <link rel="stylesheet" href="./FrontDev's/Devs.css">
+    <script type="module" src="./FrontDev's/Devs.js"></script>
+</head>
+
+<body class="light">
+    <!-- Barra superior -->
+    <div class="top-bar">
+        <h1>FrontBoard</h1>
+
+        <div class="container">
+            <span id="user-greeting"></span>
+            <button id="logout-button">Logout</button>
+
+            <input type="checkbox" class="checkbox_dark_mode" id="dark_mode">
+            <label for="dark_mode">
+                Modo escuro
+                <div class="ball"></div>
+            </label>
+        </div>
+    </div>
+
+    <div id="boards-container">
+        <button id="load-boards-button">Selecionar Boards</button>
+        <ul id="boards-list"></ul>
+
+        <div id="board-title" class="board-title"></div>
+
+        <div id="modal-container">
+            <div id="add-column-modal" class="hidden">
+                <div class="modal-content">
+                    <label for="new-column-title">Título da Coluna:</label>
+                    <input type="text" id="new-column-title" />
+                    <button id="save-column-button">Adicionar Coluna</button>
+                </div>
+            </div>
+
+            <div id="add-task-modal" class="hidden">
+                <div class="modal-content-task">
+                    <label for="new-task-title">Título da tarefa:</label>
+                    <input type="text" id="new-task-title"/>
+                    <button id="add-task-button">Adicionar Tarefa</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="columns-container"></div>
+</body>
+</html>
